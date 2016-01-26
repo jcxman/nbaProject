@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="FrontEndTestApp" >
+  <div id="wrap">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header" >
+      <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+        <div class="container">
+
+          <div class="navbar-header">
+            <a class="navbar-brand" rel="home" href="#/" >
+            <img style="max-width:100px; margin-top: -15px;"
+                 src='../images/nba_img/nba.png'>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+
+            </button>
+            <a class="navbar-brand" href="#/">NBA Web</a>
+          </div>
+
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+<!-- this is the first solution use ng-controller -->
+           
+<!-- Use ng repeat it will cost a lot of time and use to many watchers -->
+<!-- <ul class="nav navbar-nav" ng-controller="navctrl">
+<li ng-repeat="navLink in navLinks" ng-class="navClass('{{navLink.Title}}')"> <a href='#/{{navLink.Title}}'>{{navLink.LinkText}}</a> 
+        </li> 
+        </ul> -->
+             <ul class="nav navbar-nav" ng-controller="navctrl">
+                <li ng-class="navClass('')"><a href="#/">Home</a></li>
+                <li ng-class="navClass('players')"><a href="#/players">Players</a></li>
+                <li ng-class="navClass('teams')"><a href="#/teams">Teams</a></li>
+              </ul>
+<!-- use directive -->
+           <!--    <ul class="nav navbar-nav" >
+                  <li data-nav-direct=""><a href="#/">Home</a></li>
+                  <li data-nav-direct="active"><a href="#/players">Players</a></li>
+                  <li data-nav-direct="active"><a href="#/teams">Teams</a></li>
+              </ul> -->
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+
+    <div class="container">
+    <div ng-view=""></div>
+  </div>
+    </div>
+    <footer ng-controller="footerCtrl">
+        <span class="fTab" ng-click="getfooter()">Open Footer</span>
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3">
+                <ul>
+                  <li>
+                    <h4>About</h4>
+                  </li>
+                  </ul>
+                  <ul>
+                    <li>About the NBA</li>
+                    <li>Contact Us</li>
+                    <li>Career Opportunities</li>
+                    <li>Closed Captioning</li>
+                    <li>Advertise on NBA.com</li>
+                    <li>Important Dates</li>
+                    <li>FAQs</li>
+                  </ul>
+              </div>
+              <div class="col-sm-3">
+                  <ul>
+                    <li>
+                      <h4>NBA</h4>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>WNBA</li>
+                    <li>NBA D-League</li>
+                    <li>Ene-be-a</li>
+                    <li>NBATickets.com</li>
+                    <li>NBPA</li>
+                    <li>USA Basketball Youth</li>
+                    <li>NYC Store</li>
+                  
+                </ul>
+              </div>
+              <div class="col-sm-3">
+                  <ul>
+                  <li>
+                    <h4>EVENTS</h4>
+                  </li>
+                  </ul>
+                  <ul>
+                    <li>2015 NBA Playoffs</li>
+                    <li>2015 NBA Draft</li>
+                    <li>2015 NBA All-Star</li>
+                    <li>2015 Hall of Fame</li>
+                    <li>2015 Summer League</li>
+                  
+                </ul>
+              </div>
+              <div class="col-sm-3">
+                  <ul>
+                  <li>
+                    <h4>NBA 101</h4>
+                  </li>
+                  </ul>
+                  <ul>
+                    <li>NBA Official</li>
+                    <li>History</li>
+                    <li>Official & Rulebook</li>
+                    <li>Video Rulebook</li>
+                    <li>NBA Guide</li>
+                    <li>NBA Register</li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="nbaLegal">
+            <p style="font-size:0.7em;">
+            Copyright &copy; 2015 NBA Media Ventures, LLC. All rights reserved. No portion of NBA.com may be duplicated, redistributed or manipulated in any form. By accessing any information beyond this page, you agree to abide by the <a title="Link to Privacy Policy" href="/news/privacy_policy.html">Privacy Policy</a> 
+            </p>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/teams.js"></script>
+        <script src="scripts/controllers/players.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

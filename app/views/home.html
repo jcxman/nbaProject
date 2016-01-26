@@ -1,0 +1,104 @@
+<div class="jumbotron">
+<!-- carousel -->
+  <div >
+    <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;height: 500px; width :900px">
+        <div class="carousel-caption">
+          <p>{{slide.text}}</p>
+        </div>
+      </uib-slide>
+    </uib-carousel>
+  </div>
+<!-- grid system -->
+	<div class="row" style="margin-top:15px">
+		<div class="col-md-4">
+		  <uib-accordion close-others="oneAtATime">
+		    <uib-accordion-group heading="Who are my favourite Stars?" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+		      See them in Carousel!:)
+		    </uib-accordion-group>
+		    <uib-accordion-group heading="Who is going to be the next?">
+		      Anthony Davis!
+		    </uib-accordion-group>
+	    	<uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+	      	  {{group.content}}
+	    	</uib-accordion-group>
+		    <uib-accordion-group heading="Type in your favourite Star Here">
+		      <div class="input-group " style="margin-bottom:5px">
+		      	<input type="text" class="form-control" placeholder="Type name here... " data-ng-model="addnewname" >
+		      	<span class="input-group-btn ">
+		      		<button class="btn btn-default" data-ng-click="addItem(addnewname)">Add</button>
+		      	</span>
+		      </div>
+		      <div ng-repeat="item in items" style="text-align:left;">
+		      <div class="btn-group btn-group-md">
+  			      <button type="button" class="btn btn-primary"  style="margin-bottom:5px;" ng-click="open(item)">{{item}}</button>
+				  <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">Delete</button>
+		      </div>
+
+		      </div>
+		    </uib-accordion-group>
+		   </uib-accordion>
+		</div>
+		<div class="col-md-8">
+
+
+
+			<div id="nbaNewTab">
+			  <uib-tabset style="font-size:14px">
+			    <uib-tab heading="Latest News">
+			    <ul>
+			    	<li class="well "  style="margin-bottom:5px;padding:8px">Reports: Odom to move to L.A., begin therapy</li>
+			    	<li class="well " style="margin-bottom:5px;padding:8px">Walker, Lin lead unbeaten Hornets over Bulls</li>
+			    	<li class="well " style="margin-bottom:5px;padding:8px">Kobe likely to sit remainder of preseason</li>
+			    	<li class="well " style="margin-bottom:5px;padding:8px">OKC rolls behind classic Durant, Westbrook</li>
+			    </ul>
+			    </uib-tab>
+			    <!-- define the video show in tabs -->
+			    <uib-tab heading="Best Vedios">
+			    <div class="embed-responsive embed-responsive-16by9">
+				  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vRy5Ayt8xPk" ></iframe>
+				</div>
+			    </uib-tab>
+			    <uib-tab heading="Sneakers">
+			    Sneakers page coming soon!!!
+			    </uib-tab>
+			  </uib-tabset>
+			</div>
+		</div>
+	</div>
+
+	<!-- modal template to show in accordian -->
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">This is information for {{infoForSelect.playerProfile.displayName}}!</h3>
+        </div>
+        <div class="modal-body">
+
+            <ul>
+            <li><b>Player Name : </b>{{infoForSelect.playerProfile.displayName}}</li>
+            <li><b>Draft Year: </b>{{infoForSelect.playerProfile.draftYear}}</li>
+            <li><b>Player Height: </b>{{infoForSelect.playerProfile.height}}</li>
+            <li><b>Player Weight: </b>{{infoForSelect.playerProfile.weight}}</li>
+            <li><b>Team: </b>{{infoForSelect.teamProfile.name}}</li>
+            <li><b>Team Division: </b>{{infoForSelect.teamProfile.division}}</li>
+            <li><b>Abbreviation : </b>{{infoForSelect.teamProfile.displayAbbr}}</li>
+            <li><b>Conference : </b>{{infoForSelect.teamProfile.displayConference}}</li>
+            </ul>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">OK</button>
+        </div>
+    </script>
+</div>
+
+<div id="background">
+
+<video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+     <source src="images/Untitled.mp4" type="video/mp4">
+     <source src="movie.webm" type="video/webm">
+          Sorry, your browser does not support HTML5 video.
+</video> 
+
+</div>

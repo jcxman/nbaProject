@@ -1,0 +1,42 @@
+<div class="table-responsive table-curved">
+
+  <div style="float:right;">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="lastname">
+      <span class="input-group-btn">
+      </span>
+    </div>
+
+  <table class="table table-bordered table-hover ">
+    <thead>
+    <th>Name</th>
+    <th>Team</th>
+    <th>Country</th>
+    <th>Height</th>
+    <th>Weight</th>
+
+    </thead>
+    <!-- show every players -->
+    <tbody>
+      <tr ng-repeat="player in filtered | filter:search">
+        <td>{{player.playerProfile.firstName}} {{player.playerProfile.lastName}}</td>
+        <td>{{player.teamProfile.city}} {{player.teamProfile.name}}</td>
+        <td>{{player.playerProfile.country}} </td>
+        <td>{{player.playerProfile.height}}</td>
+        <td>{{player.playerProfile.weight}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+      <!--use pagenation  -->
+  <div align="center">
+        <uib-pagination 
+        ng-model="currentPage"
+        total-items="lengthForList"
+        max-size="maxSize" 
+        items-per-page="numPerPage" 
+        boundary-links="true" >
+      </uib-pagination>
+    </div>
+</div>
+<div id="backgroundplayer">
+</div>

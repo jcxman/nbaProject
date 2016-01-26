@@ -1,0 +1,38 @@
+<div class="table-responsive table-curved">
+  <table class="table table-bordered table-hover ">
+    <thead>
+      <th >City <span class="glyphicon glyphicon-sort" ng-click="changeSorting('profile.city')"></span></th>
+      <th >Name <span class="glyphicon glyphicon-sort" ng-click="changeSorting('profile.name')"></span></th>
+      <th >Conference <span class="glyphicon glyphicon-sort" ng-click="changeSorting('profile.conference')"></span></th>
+      <th >Division <span class="glyphicon glyphicon-sort" ng-click="changeSorting('profile.division')"></span></th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="team in teams.teamList|orderBy:sort.column:sort.descending">
+        <td>{{team.profile.city}}</td>
+        <td ng-click="open(team.profile.name)">{{team.profile.name}}</td>
+        <td>{{team.profile.conference}}</td>
+        <td>{{team.profile.division}}</td>
+      </tr>
+    </tbody>
+  </table>
+    <script type="text/ng-template" id="playerModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Here are {{team}} players!</h3>
+        </div>
+        <div class="modal-body" style="text-align=center">
+            <ul>
+                <li ng-repeat="player in players">
+                    {{player}}
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">OK</button>
+        </div>
+    </script>
+</div>
+
+<div id="backgroundteam">
+
+
+</div>
