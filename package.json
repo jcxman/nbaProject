@@ -1,6 +1,6 @@
 {
   "name": "FrontEndTest",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
