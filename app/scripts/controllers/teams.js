@@ -55,23 +55,23 @@ angular.module('FrontEndTestApp')
 
   })
 //controller for modal
-.controller('playerModalInstanceCtrl', function ($http, $scope, $modalInstance, items) {
+    .controller('playerModalInstanceCtrl', function ($http, $scope, $modalInstance, items) {
 
-  $scope.team= items;
-  $scope.players=[];
-  function getPlayers() {
-    $http.get('/data/players.json').then(function (response) {
-        var payload = response.data.payload;
-        var playerList = payload.players;
-        for(var i=0;i<playerList.length;i++){
-            if($scope.team==playerList[i].teamProfile.name){
-                $scope.players.push(playerList[i].playerProfile.displayName);
+      $scope.team= items;
+      $scope.players=[];
+      function getPlayers() {
+        $http.get('/data/players.json').then(function (response) {
+            var payload = response.data.payload;
+            var playerList = payload.players;
+            for(var i=0;i<playerList.length;i++){
+                if($scope.team==playerList[i].teamProfile.name){
+                    $scope.players.push(playerList[i].playerProfile.displayName);
+                }
             }
-        }
-    })
-  }
-  getPlayers();
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
+        })
+      }
+      getPlayers();
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
   };
 });

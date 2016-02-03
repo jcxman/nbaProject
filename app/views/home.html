@@ -1,5 +1,11 @@
 <div class="jumbotron">
 <!-- carousel -->
+	<div>
+		<strong>{{encoded}}</strong>
+		<br>
+		<strong>{{decoded}}</strong>
+	</div>
+
   <div >
     <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
       <uib-slide ng-repeat="slide in slides" active="slide.active">
@@ -96,7 +102,7 @@
 <div id="background">
 
 <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-     <source src="images/Untitled.mp4" type="video/mp4">
+     <source src="media/videos/background-home.mp4" type="video/mp4">
      <source src="movie.webm" type="video/webm">
           Sorry, your browser does not support HTML5 video.
 </video> 

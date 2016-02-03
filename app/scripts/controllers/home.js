@@ -8,14 +8,15 @@
  * Controller of the FrontEndTestApp
  */
 angular.module('FrontEndTestApp')
-  .controller('HomeController', function ($scope,$uibModal,$log) {
+  .controller('HomeController', function ($scope,$uibModal) {
+
   	  $scope.myInterval = 5000;
 	  $scope.noWrapSlides = false;
 	  var slides = $scope.slides = [];
 	  $scope.addSlide = function() {
 	    var newWidth = slides.length + 1;
 	    slides.push({
-	      image: '../images/nba_img/' + newWidth + '.jpg',
+	      image: '../media/images/nba_img/' + newWidth + '.jpg',
 	      text: ['NBA','Favourite','Tim','Kevin','Stephen'][slides.length % 5] + ' ' +
 	        ['Teams', 'Teams', 'Duncun', 'Garnett','Curry'][slides.length % 5]
 	    });
@@ -62,7 +63,7 @@ angular.module('FrontEndTestApp')
 		if(index>=0){
 			$scope.items.splice(index,1);
 		}
-	}
+	};
   	$scope.open = function (item) {
 
 	    var modalInstance = $uibModal.open({
@@ -83,24 +84,23 @@ angular.module('FrontEndTestApp')
 
   })
 
+    .controller('ModalInstanceCtrl', function ($http,$scope, $modalInstance, items) {
 
-.controller('ModalInstanceCtrl', function ($http,$scope, $modalInstance, items) {
-  
-	$scope.item=items;
-  function getPlayers() {
-  	$http.get('/data/players.json').then(function (response) {
-        var payload = response.data.payload;
-        var playerList = payload.players;
-    	for(var i=0;i<playerList.length;i++){
-			if($scope.item==playerList[i].playerProfile.displayName){
-    			$scope.infoForSelect=playerList[i];
-    		}
-    	}
-    })
-  }
-  getPlayers();
+        $scope.item=items;
+        (function getPlayers() {
+        $http.get('/data/players.json').then(function (response) {
+            var payload = response.data.payload;
+            var playerList = payload.players;
+            for(var i=0;i<playerList.length;i++){
+                if($scope.item==playerList[i].playerProfile.displayName){
+                    $scope.infoForSelect=playerList[i];
+                }
+            }
+        })
+        }());
 
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
+
+        $scope.cancel = function () {
+          $modalInstance.dismiss('cancel');
+        };
 });
