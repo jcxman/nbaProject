@@ -201,13 +201,25 @@ ul, li{
 }
 
 
+/*@keyframes example {*/
+     /*0%   {background-image: url(/media/images/nba_img/back0202.jpg);}*/
+     /*10%   {background-image: url(/media/images/nba_img/back0202.jpg);}*/
+     /*!*    15%  {background-image: url(/images/back03.jpg);}*!*/
+     /*20%  {background-image: url(/media/images/nba_img/back02.jpg);}*/
+     /*70%  {background-image: url(/media/images/nba_img/back02.jpg);}*/
+     /*!*    75%  {background-image: url(/images/back03.jpg);}*!*/
+     /*80%  {background-image: url(/media/images/nba_img/back0202.jpg);}*/
+     /*100% {background-image: url(/media/images/nba_img/back0202.jpg);}*/
+ /*}*/
+
+
 @keyframes example {
     0%   {background-image: url(/media/images/nba_img/back0202.jpg);}
-    10%   {background-image: url(/media/images/nba_img/back0202.jpg);}
-/*    15%  {background-image: url(/images/back03.jpg);}*/
-    20%  {background-image: url(/media/images/nba_img/back02.jpg);}
+    /*10%   {background-image: url(/media/images/nba_img/back0202.jpg);}*/
+    /*    15%  {background-image: url(/images/back03.jpg);}*/
+    /*20%  {background-image: url(/media/images/nba_img/back02.jpg);}*/
     70%  {background-image: url(/media/images/nba_img/back02.jpg);}
-/*    75%  {background-image: url(/images/back03.jpg);}*/
-    80%  {background-image: url(/media/images/nba_img/back0202.jpg);}
+    /*    75%  {background-image: url(/images/back03.jpg);}*/
+    /*80%  {background-image: url(/media/images/nba_img/back0202.jpg);}*/
     100% {background-image: url(/media/images/nba_img/back0202.jpg);}
 }

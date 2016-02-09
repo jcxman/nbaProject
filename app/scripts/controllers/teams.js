@@ -73,5 +73,5 @@ angular.module('FrontEndTestApp')
       getPlayers();
       $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
-  };
+      };
 });

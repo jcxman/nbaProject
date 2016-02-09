@@ -17,7 +17,7 @@
     </thead>
     <!-- show every players -->
     <tbody>
-      <tr ng-repeat="player in filtered | filter:search">
+      <tr ng-repeat="player in filtered">
         <td>{{player.playerProfile.firstName}} {{player.playerProfile.lastName}}</td>
         <td>{{player.teamProfile.city}} {{player.teamProfile.name}}</td>
         <td>{{player.playerProfile.country}} </td>
