@@ -16,9 +16,10 @@ describe("HomeController",function(){
     });
 
     describe("Initialization",function(){
-        it("Should instantizte interval to 8 ",function(){
+        it("Should instantizte interval to 5000 ",function(){
             expect($scope.myInterval).toEqual(5000);
-        })
+        });
+
     })
 
 });
