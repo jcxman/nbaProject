@@ -77,9 +77,9 @@ angular.module('FrontEndTestApp')
 	      }
 	    });
   	};
-	 $scope.toggleAnimation = function () {
-	    $scope.animationsEnabled = !$scope.animationsEnabled;
-	  };
+     $scope.toggleAnimation = function () {
+        $scope.animationsEnabled = !$scope.animationsEnabled;
+      };
 
 
   })
